@@ -1,21 +1,14 @@
-mod-phantomjs
-===
+// A sample Modfile
+// More info at https://github.com/modulejs/modjs/
 
-Run in phantomjs sandbox
-
-
-## Usage
-
-```js
 module.exports = {
     plugins: {
-        "phantom": "mod-phantomjs"
+        "mod-phantomjs": "../index.js"
     },
     tasks: {
-        "phantom": {
+        "mod-phantomjs": {
             script: "./test.js",
             args: "http://www.baidu.com"
         }
     }
 };
-```

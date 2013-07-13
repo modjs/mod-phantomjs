@@ -1,0 +1,36 @@
+{
+    "name": "mod-phantomjs",
+    "description": "Run in phantomjs sandbox",
+    "version": "0.1.0",
+    "homepage": "https://github.com/modjs/phantomjs",
+    "author": {
+        "name": "Yuanyan",
+        "url": "https://github.com/Yuanyan"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/modjs/phantomjs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/modjs/phantomjs/issues"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/modjs/phantomjs/blob/master/MIT-LICENSE.txt"
+        }
+    ],
+    "bin": "",
+    "engines": {
+        "node": ">= 0.6.0"
+    },
+    "scripts": {
+        "test": ""
+    },
+    "dependencies": {
+         "phantomjs": "~1.9.1-0"
+    },
+    "devDependencies": {
+    },
+    "keywords": []
+}
