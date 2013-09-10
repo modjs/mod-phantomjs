@@ -11,7 +11,7 @@ exports.options = {
         describe : 'arguments passed to phantomjs script'
     },
     "opts" : {
-        describe : 'options passed to phantomjs'
+        describe : 'command line options passed to phantomjs'
     }
 };
 
@@ -25,14 +25,29 @@ exports.run = function (options, done) {
     var binPath = phantomjs.path;
 
     var childArgs = [];
-    if(opts) childArgs.push(opts);
+    
+    // https://github.com/ariya/phantomjs/wiki/API-Reference#command-line-options
+    if(opts){
+        Object.keys(opts).forEach(function(key) {
+            var val = opts[key];
+            if (!/^\-\-/.test(key)) {
+                key = '--' + key;
+            } 
+            childArgs.push(key + '=' + val);
+        });
+    }
+    
     if(script) childArgs.push(script);
-    if(args) childArgs.push(args);
+    
+    if(args){
+        childArgs = childArgs.concat(args);
+    }
 
     exports.log("Running PhantomJS...")
     childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
-        console.log(stdout);
-        done(err, stderr);
+        stdout && exports.log(stdout.trim());
+        stderr && exports.error(stderr.trim());
+        done(err);
     });
 
 };

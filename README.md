@@ -1,8 +1,7 @@
 mod-phantomjs
 ===
 
-Run in phantomjs sandbox
-
+Run script in phantomjs sandbox
 
 ## Usage
 
