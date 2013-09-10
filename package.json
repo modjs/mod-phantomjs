@@ -1,6 +1,6 @@
 {
     "name": "mod-phantomjs",
-    "description": "Run in phantomjs sandbox",
+    "description": "Run script in phantomjs sandbox",
     "version": "0.1.1",
     "homepage": "https://github.com/modjs/phantomjs",
     "author": {
