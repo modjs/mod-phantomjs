@@ -55,5 +55,7 @@ exports.run = function (options, done) {
     cp.stderr.on('data', function (data) {
        process.stderr.write(data);
     });
+    
+    return cp;
 
 };
