@@ -44,10 +44,16 @@ exports.run = function (options, done) {
     }
 
     exports.log("Running PhantomJS...")
-    childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
-        stdout && exports.log(stdout.trim());
-        stderr && exports.error(stderr.trim());
+    var cp = childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
         done(err);
+    });
+    
+    cp.stdout.on('data', function (data) {
+        process.stdout.write(data);
+    });
+
+    cp.stderr.on('data', function (data) {
+       process.stderr.write(data);
     });
 
 };

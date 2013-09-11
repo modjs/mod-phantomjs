@@ -13,7 +13,7 @@ module.exports = {
     tasks: {
         "phantom": {
             script: "./test.js",
-            args: "http://www.baidu.com"
+            args: "http://www.qq.com"
         }
     }
 };
